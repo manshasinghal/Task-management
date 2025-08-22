@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #0f172a;
+  --color-fg: #f1f5f9;
+  --color-fg-subtle: #cbd5e1;
+  --color-border: #334155;
+  --color-primary: #6366f1;
+  --color-primary-hover: #818cf8;
+  --color-accent: #ec4899;
+  --color-status-pending: #f87171;
+  --color-status-inprogress: #facc15;
+  --color-status-completed: #4ade80;
+  --color-focus-ring: rgba(99,102,241,0.5);
+}
+.dark {
+  --color-bg: #020617;
+  --color-fg: #e2e8f0;
+  --color-fg-subtle: #94a3b8;
+  --color-border: #1e293b;
+  --color-primary: #818cf8;
+  --color-primary-hover: #a5b4fc;
+  --color-accent: #f472b6;
+  --color-status-pending: #f87171;
+  --color-status-inprogress: #facc15;
+  --color-status-completed: #22c55e;
+  --color-focus-ring: rgba(250,204,21,0.5);
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-base-bg text-base-fg font-sans; }
+
+:focus-visible { outline: 2px solid transparent; box-shadow: 0 0 0 3px var(--color-focus-ring); border-radius: 6px; }
+
+.badge-status { @apply px-2 py-0.5 rounded-full text-[11px] font-semibold tracking-wide uppercase; }
+.badge-status-pending { background: var(--color-status-pending); color:#1e1e1e; }
+.badge-status-inprogress { background: var(--color-status-inprogress); color:#1e1e1e; }
+.badge-status-completed { background: var(--color-status-completed); color:#052e16; }
+
+.truncate-title { @apply max-w-[160px] md:max-w-[200px] truncate; }
+
+.skeleton { @apply animate-pulse bg-slate-500/20 rounded-md; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
