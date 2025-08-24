@@ -6,7 +6,12 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+    origin: 'https://task-management-eth2.vercel.app', // Your frontend's domain
+    optionsSuccessStatus: 200 // For legacy browser support
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/task-management-db';
